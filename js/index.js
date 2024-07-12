@@ -123,6 +123,11 @@ let moveInterval;
 let speed = 150;
 
 snake.move = function (direction) {
+    if (direction == up && snake.direction == down) return
+    if (direction == left && snake.direction == right) return
+    if (direction == down && snake.direction == up) return
+    if (direction == right && snake.direction == left) return
+
     if (moveInterval) clearInterval(moveInterval);
     moveInterval = setInterval(() => {
         move(direction);
@@ -138,12 +143,6 @@ window.addEventListener('keydown', (e) => {
         40: down,
         37: left,
     }
-    if (map[e.keyCode] == up && snake.direction == down) return
-    if (map[e.keyCode] == left && snake.direction == right) return
-    if (map[e.keyCode] == down && snake.direction == up) return
-    if (map[e.keyCode] == right && snake.direction == left) return
-
-    //contineously moving in input direction
     snake.move(map[e.keyCode]);
 });
 
@@ -152,6 +151,8 @@ function newGame() {
     if (moveInterval) clearInterval(moveInterval);
     snake.head = null;
     snake.tail = null;
+    snake.direction = right;
+
     for (const rows of pixels) {
         for (const col of rows) {
             col.className = 'pixel';
