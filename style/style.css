@@ -17,12 +17,43 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
-
+.controlls{
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(2, 50px);
+}
+button{
+    border: none;
+    background-color: greenyellow;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+button#up{
+    grid-column: 2/3;
+}
+button#left{
+    grid-row: 2/3;
+    transform: rotate(-90deg);
+}
+button#right{
+    grid-row: 2/3;
+    grid-column: 3/4;
+    transform: rotate(90deg);
+}
+button#down{
+    grid-row: 3/4;
+    grid-column: 2/3;
+    transform: rotate(180deg);
+}
 .playgound{
     width: 80vw;
     height: 80vh;
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    max-width: 600px;
+    max-height: 600px;
     display: grid;
 }
 .pixel{
@@ -30,6 +61,9 @@ body{
     border-left: 1px solid;
     border-bottom: 1px solid;
     border-color: #272727;
+}
+.fruit{
+    background-color: crimson;
 }
 
 .green{
