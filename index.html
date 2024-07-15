@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>snake game</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style/style.css">
+    <title>snake game</title>
 </head>
+
 <body>
-    <div class="playgound"></div>
-    <div class="controlls">
-        <button id="up" onclick="snake.move(up)"><img src="./assets/caret.svg" alt=""></button>
-        <button id="left" onclick="snake.move(left)"><img src="./assets/caret.svg" alt=""></button>
-        <button id="right" onclick="snake.move(right)"><img src="./assets/caret.svg" alt=""></button>
-        <button id="down" onclick="snake.move(down)"><img src="./assets/caret.svg" alt=""></button>
-    </div>
+    <main>
+        <header>
+            <h1>Snake Game</h1>
+            <div class="score-board">
+                <div class="high-score">
+                    <span>high score</span>
+                    <span class="value">526</span>
+                </div>
+
+                <div class="score">
+                    <span>score</span>
+                    <span class="value">526</span>
+                </div>
+            </div>
+        </header>
+        <div class="game-board"></div>
+        <div class="controlls">
+            <button title="up" id="up" onclick="move(up, 'up')"><img src="assets/caret.svg" alt=""></button>
+            <button title="right" id="right" onclick="move(right, 'right')"><img src="assets/caret.svg" alt=""></button>
+            <button title="left" id="left" onclick="move(left, 'left')"><img src="assets/caret.svg" alt=""></button>
+            <button title="down" id="down" onclick="move(down, 'down')"><img src="assets/caret.svg" alt=""></button>
+        </div>
+    </main>
 </body>
-<script src="js/index.js"></script>
+
+<script src="game.js"></script>
+
 </html>
