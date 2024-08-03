@@ -174,6 +174,7 @@ function isEqual(pos1, pos2) {
 }
 
 function newGame() {
+    
     snakeBody = [
         { x: 10, y: 13 },
         { x: 10, y: 12 },
@@ -182,6 +183,7 @@ function newGame() {
     snakeSpeed = 5;
     snakeDirection = 'right';
     foodPosition = getRandomFood();
+    score.textContent = 0;
 }
 
 window.addEventListener('keydown', ({ key }) => {
